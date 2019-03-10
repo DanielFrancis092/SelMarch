@@ -11,8 +11,8 @@ public class MyCycle {
 		// referenceName.variableName;
 		Bicycle mycycle = new Bicycle();
 		mycycle.doRide();
-		String color = mycycle.getColor("Son");
-		System.out.println(color);
+		mycycle.getColor("Wife");
+		//System.out.println(color);
 		String brandName = mycycle.brandName;
 		System.out.println(brandName);
 		
