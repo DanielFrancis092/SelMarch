@@ -6,8 +6,8 @@ import utils.ProjectMethods;
 
 public class EditLead extends ProjectMethods{
 	// packageName.ClassName.methodName
-	@Test(enabled = true,
-			dependsOnMethods = {"week5.day1.CreateLead.cLead", "anotherClass"})
+	//@Test(enabled = true,dependsOnMethods = {"week5.day1.CreateLead.cLead", "anotherClass"})
+	@Test
 	public void eLead() throws InterruptedException {
 		
 		driver.findElementByLinkText("Leads").click();

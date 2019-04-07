@@ -1,17 +1,23 @@
 package utils;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Parameters;
 
 import com.aventstack.extentreports.testng.listener.ExtentITestListenerClassAdapter;
-@Listeners(ExtentITestListenerClassAdapter.class) 
+
+import week5.day2.ReadExcel;
+
 public class ProjectMethods {
+	
 	public ChromeDriver driver;
+	public String dataSheetName;
 	@Parameters({"url","username","password"})
 	@BeforeMethod
 	public void startApp(String site, String uname, String pwd) {
@@ -30,7 +36,11 @@ public class ProjectMethods {
 		driver.close();
 	}
 	
-	
+	@DataProvider(name = "FetchData")
+	public String[][] getData() throws IOException {
+		ReadExcel excel = new ReadExcel();
+		return excel.readExcel(dataSheetName);
+	}
 	
 	
 	
